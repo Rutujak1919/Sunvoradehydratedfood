@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunvora Foods — Premium Dehydrated &amp; Herbal Powders</title>
+<link rel="icon" href="imag/logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  * { font-family: 'Manrope', sans-serif !important; }
+</style>
+</head>
+<body>
+
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="row">
+    <div class="loc">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      <span id="i18n-deliver">Deliver to India</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <span id="i18n-tagline">100% Pure &amp; Chemical-Free Herbal Powders</span>
+      <select id="langSelect" title="Choose language">
+        <option value="en">English</option>
+        <option value="hi">हिंदी</option>
+        <option value="mr">मराठी</option>
+        <option value="ta">தமிழ்</option>
+        <option value="te">తెలుగు</option>
+        <option value="bn">বাংলা</option>
+        <option value="gu">ગુજરાતી</option>
+        <option value="kn">ಕನ್ನಡ</option>
+        <option value="ml">മലയാളം</option>
+        <option value="pa">ਪੰਜਾਬੀ</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="main-header">
+  <div class="header-row">
+    <a href="#" class="logo" onclick="goHome();return false;">
+      <span class="badge-img"><img src="imag/logo.jpeg" alt="Sunvora Foods"></span>
+      <span><span class="word">Sunvora</span><span class="tag">Dehydrated &amp; Herbal Foods</span></span>
+    </a>
+    <div class="searchbar">
+  <input id="searchInput" type="text" placeholder="Search herbal powders…" data-i18n-placeholder="search" autocomplete="off">
+  <button onclick="runSearch()" aria-label="Search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+  </button>
+  <div id="searchSuggestions" class="search-suggestions"></div>
+</div>
+    <div class="header-actions">
+      <button class="account-btn" onclick="openAuth()" id="accountBtnHead">
+        <span class="l1">Order placed?</span>
+        <span class="l2">Track My Order</span>
+      </button>
+      <button class="cart-btn" onclick="openCart()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+        <span id="i18n-cart">Cart</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- CATEGORY NAV -->
+<nav class="category-nav">
+  <div class="category-row">
+    <button class="hamburger" onclick="openDrawer()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <span id="i18n-menu">Menu</span>
+    </button>
+    <button class="catlink" onclick="filterCat('bestseller')" id="i18n-bestsellers">Bestsellers</button>
+    <button class="catlink" onclick="filterCat('deal')" id="i18n-deals">Today's Deals</button>
+    <button class="catlink" onclick="filterCat('new')" id="i18n-new">New Releases</button>
+    <button class="catlink" onclick="filterCat('sale')" id="i18n-sale">Sale</button>
+    <button class="catlink" onclick="filterCat('all')" id="i18n-all">All Products</button>
+  </div>
+</nav>
+
+<!-- SIDE DRAWER -->
+<div id="drawerOverlay" class="overlay" onclick="closeDrawer()"></div>
+<div id="sideDrawer" class="drawer">
+  <div class="drawer-head">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span class="badge-img" style="width:38px;height:38px;"><img src="imag/logo.jpeg" alt="Sunvora Foods"></span>
+      <div>
+        <div style="font-family:'Fraunces',serif;font-size:17px;">Sunvora Foods</div>
+        <div class="who" id="drawerWho">Welcome, guest</div>
+      </div>
+    </div>
+    <button class="drawer-close" onclick="closeDrawer()">&times;</button>
+  </div>
+  <nav>
+    <a href="#" onclick="goHome();closeDrawer();return false;">Home</a>
+    <a href="#about" onclick="closeDrawer();">About Us</a>
+    <a href="#" onclick="filterCat('bestseller');closeDrawer();return false;">Bestsellers</a>
+    <a href="#" onclick="filterCat('deal');closeDrawer();return false;">Today's Deals</a>
+    <a href="#" onclick="filterCat('new');closeDrawer();return false;">New Releases</a>
+    <a href="#" onclick="filterCat('all');closeDrawer();return false;">All Products</a>
+    <a href="#" onclick="openCart();closeDrawer();return false;">My Cart</a>
+    <a href="#" onclick="openMyOrders();closeDrawer();return false;">My Orders</a>
+    <a href="#footer" onclick="closeDrawer();">Contact Us</a>
+    <button id="drawerAuthBtn" onclick="openAuth();closeDrawer();">Sign In</button>
+  </nav>
+</div>
+
+<!-- CART DRAWER -->
+<div id="cartOverlay" class="overlay" onclick="closeCart()"></div>
+<div id="cartDrawer" class="cart-drawer">
+  <div class="cart-head">
+    <div style="font-weight:800;">Your Cart</div>
+    <button class="drawer-close" onclick="closeCart()">&times;</button>
+  </div>
+  <div class="cart-items" id="cartItemsWrap"></div>
+  <div class="cart-foot">
+    <div class="cart-total-row"><span>Total</span><span id="cartTotal">₹0</span></div>
+    <button class="btn btn-gold btn-full" onclick="checkout()">Checkout</button>
+    <div class="auth-note">No account needed — we'll email your order confirmation, and you can look it up later with this email.</div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <svg class="hero-leaves" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
+    <g fill="none" stroke="#e8c547" stroke-width="1.3">
+      <path d="M60 40 Q120 10 100 90 Q60 90 60 40Z"/>
+      <path d="M960 400 Q1030 370 1000 450 Q950 450 960 400Z"/>
+      <path d="M1100 60 Q1160 40 1140 110 Q1090 110 1100 60Z"/>
+      <path d="M180 420 Q240 400 220 470 Q170 470 180 420Z"/>
+      <path d="M700 30 Q760 5 745 80 Q695 80 700 30Z"/>
+    </g>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2c-4 3-5 8-2 12 1 1.6 2 2 2 2s1-.4 2-2c3-4 2-9-2-12z"/>
+        </svg>
+        PURE • NATURAL • DEHYDRATED
+      </div>
+
+      <h1>
+        Sunvora<br>
+        <em>Dehydrated</em><br>
+        Products
+      </h1>
+
+      <p>
+        We provide premium quality dehydrated vegetables,
+        flakes and natural food powders with purity,
+        quality and freshness.
+      </p>
+
+      <div class="hero-ctas">
+        <button class="btn" onclick="document.getElementById('bestsellersSection').scrollIntoView({behavior:'smooth'})">
+          EXPLORE PRODUCTS →
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STOREFRONT -->
+<main id="storefront">
+  <section class="section" id="bestsellersSection">
+    <div class="section-head">
+      <div><h2 id="i18n-bestsellers2">Bestsellers</h2><div class="sub">Loved again and again</div></div>
+      <div class="leaf-divider"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-4 3-5 8-2 12 1 1.6 2 2 2 2s1-.4 2-2c3-4 2-9-2-12z"/></svg></div>
+    </div>
+    <div class="grid" id="gridBestsellers"></div>
+  </section>
+
+  <section class="section" style="background:var(--ivory);">
+    <div class="section-head">
+      <div><h2 id="i18n-deals2">Today's Deals</h2><div class="sub">Limited-time savings</div></div>
+    </div>
+    <div class="grid" id="gridDeals"></div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div><h2 id="i18n-new2">New Releases</h2><div class="sub">Freshly launched this season</div></div>
+    </div>
+    <div class="grid" id="gridNew"></div>
+  </section>
+
+  <section class="section" style="background:var(--ivory);" id="allProductsSection">
+    <div class="section-head">
+      <div><h2 id="allTitle">All Products</h2><div class="sub" id="allSub">Our full herbal range</div></div>
+    </div>
+    <div class="grid" id="gridAll"></div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container" style="max-width:800px;text-align:center;">
+      <div class="leaf-divider" style="justify-content:center;margin-bottom:14px;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-4 3-5 8-2 12 1 1.6 2 2 2 2s1-.4 2-2c3-4 2-9-2-12z"/></svg></div>
+      <h2 style="font-size:26px;">Our Story</h2>
+      <p style="color:var(--muted);line-height:1.8;font-size:14.5px;">Sunvora Foods is a trusted manufacturer and supplier of premium dehydrated vegetables, flakes and natural herbal powders — Onion, Garlic, Ginger, Beetroot, Moringa, Amla, Turmeric and more. Every batch is sun-dried and stone-ground to preserve its natural taste, aroma, colour and nutrition, with no additives and no shortcuts, from our farms in Chikhali, Taluka Indapur, District Pune.</p>
+    </div>
+  </section>
+
+  <!-- ========== WHY SUNVORA SECTION (Improved) ========== -->
+  <section class="why-section">
+    <div class="why-inner">
+      <div class="why-header">
+        <span class="why-eyebrow">✦ WHY SUNVORA</span>
+        <h2>Why Choose Sunvora Foods</h2>
+        <p>Four commitments that shape every jar we seal, from farm to your kitchen.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3>Purity, Guaranteed</h3>
+          <p>No fillers, no artificial colour, no shortcuts — just the root, leaf or seed it came from.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3>Fresh, Small Batches</h3>
+          <p>Sun-dried and stone-ground in limited quantities so aroma, colour and nutrition stay intact.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+          </div>
+          <h3>Hygienically Processed</h3>
+          <p>Every step, from harvest to packaging, follows strict hygiene and quality control standards.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+          </div>
+          <h3>Trusted Nationwide</h3>
+          <p>Reliable supply and timely delivery for households, wholesalers and exporters alike.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<!-- PRODUCT MODAL -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal" style="max-width:940px;">
+    <button class="modal-close" onclick="closeModal('productModal')">&times;</button>
+    <div class="product-modal-grid">
+      <div class="pm-img" id="pmImgWrap"></div>
+      <div class="pm-body">
+        <span class="badge" id="pmBadge" style="position:static;display:inline-block;margin-bottom:8px;"></span>
+        <h2 id="pmName"></h2>
+        <div class="stars" id="pmStars"></div>
+        <div class="field-label">Weight</div>
+        <div class="variant-row" id="pmVariants"></div>
+        <div class="pm-price" id="pmPrice"></div>
+        <div id="pmStock" class="stock-note"></div>
+        <p class="pm-desc" id="pmDesc"></p>
+        <div class="pm-actions">
+          <div class="qty-ctrl"><button onclick="pmQty(-1)">−</button><span id="pmQty">1</span><button onclick="pmQty(1)">+</button></div>
+          <button class="btn btn-gold" onclick="addToCartFromModal()">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-wrap">
+      <h3>Customer Reviews</h3>
+      <div id="reviewsList"></div>
+      <div class="review-form" id="reviewFormWrap">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px;">Write a review</div>
+        <div class="stars-input" id="starsInput">
+          <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span>
+        </div>
+        <input id="reviewName" placeholder="Your name">
+        <input id="reviewEmail" type="email" placeholder="Your email (optional)">
+        <textarea id="reviewComment" rows="3" placeholder="Share your experience with this product…"></textarea>
+        <button class="btn btn-dark btn-sm" onclick="submitReview()">Submit Review</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRACK ORDER MODAL (there is no customer login — this replaces it) -->
+<div class="modal-overlay" id="trackModal">
+  <div class="modal auth-box">
+    <button class="modal-close" onclick="closeModal('trackModal')">&times;</button>
+    <div style="font-family:'Fraunces',serif;font-size:19px;margin-bottom:4px;">Track My Order</div>
+    <div style="font-size:12.5px;color:var(--muted);margin-bottom:16px;">No account needed — just enter the email you used at checkout.</div>
+    <div class="field"><label>Email</label><input id="trackEmail" type="email"></div>
+    <button class="btn btn-gold btn-full" onclick="lookupOrders()">Find My Orders</button>
+    <div id="trackResults" style="margin-top:14px;"></div>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="foot-brand">
+      <img src="imag/logo.jpeg" alt="Sunvora Foods" style="width:120px;border-radius:10px;margin-bottom:14px;background:#fff;padding:8px;">
+      <p>Supplying premium dehydrated vegetables, flakes and natural herbal powders with purity, quality and freshness — from Chikhali, Taluka Indapur, District Pune, Maharashtra.</p>
+      <div class="social-row">
+  <a href="https://www.instagram.com/sunvora_dehyration_official/" target="_blank" title="Instagram">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+  </a>
+  <a href="https://www.facebook.com/profile.php?id=61593113503701" target="_blank" title="Facebook">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+  </a>
+  <a href="https://linkedin.com/company/YOUR_LINKEDIN" target="_blank" title="LinkedIn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9h4v2a4 4 0 0 1 8 0v9h-4v-8a1.5 1.5 0 0 0-3 0v8h-4z"/></svg>
+  </a>
+  <a href="mailto:Sunvoradehydration@gmail.com" title="Email">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 6 9-6"/></svg>
+  </a>
+</div>
+<div class="handle-note">@sunvorafoods · +91 9172081996 · Sunvoradehydration@gmail.com</div>    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#" onclick="openMyOrders();return false;">Track Order</a></li>
+        <li><a href="#" onclick="openAuth();return false;">My Account</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Subscribe Here Stay Updated </h4>
+      <p style="font-size:12.5px;opacity:.8;margin-bottom:8px;">Offers, new releases &amp; herbal tips — no spam.</p>
+      <div class="newsletter">
+        <input id="subEmail" type="email" placeholder="you@email.com">
+        <button class="btn btn-gold btn-sm" onclick="subscribe()">Join</button>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Sunvora Foods. All rights reserved.</span>
+  </div>
+</footer>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal-overlay" id="checkoutModal" onclick="if(event.target===this)closeModal('checkoutModal')">
+  <div class="modal checkout-modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal('checkoutModal')">&times;</button>
+    
+    <div class="checkout-header">
+      <h2 id="checkoutTitle">Complete Your Order</h2>
+      <p id="checkoutSubtitle">Enter your details to place the order</p>
+    </div>
+
+    <div class="checkout-body">
+
+      <!-- STEP 1: Customer Details -->
+      <div id="checkoutStep1">
+        <div class="checkout-summary" id="checkoutSummary"></div>
+
+        <div class="field">
+          <label>Full Name</label>
+          <input type="text" id="checkoutName" placeholder="Enter your full name">
+        </div>
+        <div class="field">
+          <label>Email Address</label>
+          <input type="email" id="checkoutEmail" placeholder="you@email.com">
+        </div>
+          <div class="field">
+  <label>Mobile Number <span style="color:#c0392b;">*</span></label>
+  <div style="display:flex; gap:8px; align-items:center;">
+    <select id="checkoutCountryCode" style="width:130px; padding:10px 12px; border-radius:8px; border:1px solid #ddd; height:42px;">
+      <option value="+91" selected> IN +91</option>
+      <option value="+1"> US +1</option>
+      <option value="+44"> UK +44</option>
+      <option value="+971"> AE +971</option>
+      <option value="+61"> AU +61</option>
+      <option value="+65"> SG +65</option>
+      <option value="+977"> NP +977</option>
+      <option value="+94"> LK +94</option>
+      <option value="+880"> BD +880</option>
+    </select>
+    <input type="tel" id="checkoutPhone" placeholder="9876543210" style="flex:1; padding:10px 12px; border:1px solid #ddd; border-radius:8px; height:42px;" maxlength="12">
+  </div>
+</div>
+        <div class="field">
+  <label>Delivery Address <span style="color:#c0392b;">*</span></label>
+  <input type="text" id="checkoutAddress" placeholder="House no., street, area, landmark, city, state, PIN code">
+</div>
+        <div class="checkout-total">
+          <span>Order Total</span>
+          <strong id="checkoutTotalAmount">₹0</strong>
+        </div>
+
+        <button class="btn btn-line btn-full" style="margin-bottom: 12px;" onclick="backToCartFromCheckout()">
+          ← &nbsp; Back to Cart
+        </button>
+
+        <button class="btn btn-gold btn-full" onclick="goToPaymentStep()">
+          Continue to Payment &nbsp; →
+        </button>
+      </div><!-- /checkoutStep1 -->
+
+      <!-- STEP 2: Payment Method -->
+      <div id="checkoutStep2" style="display:none;">
+        <div class="payment-options">
+          
+          <label class="payment-option">
+            <input type="radio" name="paymentMethod" value="cod" checked>
+            <div class="payment-card">
+              <div class="payment-title">Cash on Delivery</div>
+              <div class="payment-desc">Pay when you receive the order</div>
+            </div>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="paymentMethod" value="upi">
+            <div class="payment-card">
+              <div class="payment-title">UPI Payment</div>
+              <div class="payment-desc">Pay now using any UPI app</div>
+            </div>
+          </label>
+        </div>
+
+        <!-- UPI Details (shown only when UPI selected) -->
+        <div id="upiDetails" style="display:none; margin-top:18px;">
+          <div style="background:#f8f6f1; border-radius:12px; padding:16px; text-align:center;">
+            <p style="font-size:13px; color:#555; margin:0 0 10px;">Scan QR or pay to UPI ID:</p>
+            
+            <img src="imag/QR.jpeg" alt="UPI QR Code" 
+                 style="width:180px; height:180px; object-fit:contain; border-radius:10px; margin:0 auto 12px; display:block; background:#fff; padding:8px;">
+            
+            <div style="font-size:15px; font-weight:800; color:#1a3c1a; word-break:break-all; margin-bottom:6px;">
+              nikamsaurabh96-1@okhdfcbank
+            </div>
+            
+            <p style="font-size:12px; color:#6b7568; margin:8px 0 0;">
+              After payment, click “Place Order” below.<br>
+              We will verify and confirm your order.
+            </p>
+          </div>
+        </div>
+
+        <div class="checkout-total" style="margin-top:20px;">
+          <span>Order Total</span>
+          <strong id="checkoutTotalAmount2">₹0</strong>
+        </div>
+
+        <button class="btn btn-gold btn-full" onclick="placeOrder()">
+          Place Order
+        </button>
+
+        <button class="btn btn-line btn-full" style="margin-top:10px;" onclick="backToDetailsStep()">
+          ←  Back
+        </button>
+      </div><!-- /checkoutStep2 -->
+
+      <p class="checkout-note">No account needed. We’ll send the order confirmation to your email.</p>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<!-- ORDER SUCCESS MODAL -->
+<div class="modal-overlay" id="orderSuccessModal">
+  <div class="modal checkout-modal" style="max-width:440px;">
+    <button class="modal-close" onclick="closeModal('orderSuccessModal')">&times;</button>
+    
+    <div class="checkout-header" style="background:linear-gradient(135deg,#1a3c2e,#0f241c);">
+      <div style="font-size:42px;margin-bottom:8px;">✓</div>
+      <h2>Order Confirmed!</h2>
+      <p>We have received your order</p>
+    </div>
+
+    <div class="checkout-body" style="text-align:center;">
+      <p style="font-size:14px;color:#555;margin-bottom:6px;">Order ID</p>
+      <div id="successOrderId" style="font-size:20px;font-weight:800;color:#1a3c1a;margin-bottom:18px;"></div>
+
+      <div id="successOrderSummary" style="text-align:left;background:#f8f6f1;border-radius:12px;padding:14px 16px;margin-bottom:18px;"></div>
+
+      <p style="font-size:13.5px;color:#555;line-height:1.6;">
+        A confirmation email has been sent to<br>
+        <b id="successEmail"></b>
+      </p>
+
+      <button class="btn btn-gold btn-full" style="margin-top:22px;" onclick="closeModal('orderSuccessModal')">
+        Continue Shopping
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== OWNER LOGIN MODAL ==================== -->
+<div class="modal-overlay" id="ownerModal">
+  <div class="modal auth-box" style="max-width:380px;">
+    <button class="modal-close" onclick="closeModal('ownerModal')">&times;</button>
+    <div style="font-family:'Fraunces',serif;font-size:19px;margin-bottom:4px;">Owner Login</div>
+    <div style="font-size:12.5px;color:var(--muted);margin-bottom:16px;">Enter owner username and password.</div>
+    
+    <div class="field">
+      <label>Username</label>
+      <input id="ow-user" type="text" placeholder="Owner username" autocomplete="username">
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input id="ow-pass" type="password" placeholder="Owner password" autocomplete="current-password"
+             onkeydown="if(event.key==='Enter')ownerLogin()">
+    </div>
+    
+    <div id="ownerAuthError" class="auth-note" style="display:none;color:#c0392b;margin-bottom:10px;"></div>
+    <button class="btn btn-gold btn-full" onclick="ownerLogin()">Log In as Owner</button>
+  </div>
+</div>
+
+<!-- ==================== ADMIN / OWNER DASHBOARD ==================== -->
+<div id="adminView" style="display:none;min-height:100vh;background:#f7f4ec;">
+  <!-- Top bar -->
+  <div id="adminTopBar" style="background:#1a3c2e;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:50;">
+    <div style="font-weight:800;font-size:17px;">Sunvora Foods — Owner Dashboard</div>
+    <button class="btn btn-line btn-sm" style="color:#fff;border-color:#fff;" onclick="ownerLogout()">Log Out</button>
+  </div>
+
+  <div style="max-width:1100px;margin:0 auto;padding:24px 16px;">
+    <!-- Stats -->
+    <div id="adminStats" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-bottom:28px;"></div>
+
+    <!-- Tabs -->
+    <div class="admin-tabs" style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;">
+      <button class="btn btn-dark btn-sm active" data-tab="products" onclick="showAdminTab('products')">Products</button>
+      <button class="btn btn-line btn-sm" data-tab="reviews" onclick="showAdminTab('reviews')">Reviews</button>
+      <button class="btn btn-line btn-sm" data-tab="orders" onclick="showAdminTab('orders')">Orders</button>
+      <button class="btn btn-line btn-sm" data-tab="subs" onclick="showAdminTab('subs')">Subscribers</button>
+    </div>
+
+    <!-- Panel: Products -->
+    <div class="admin-panel active" id="panel-products">
+      <!-- Add new product form -->
+<div class="admin-card" style="margin-bottom:24px;">
+  <div style="font-weight:700; margin-bottom:16px; font-size:16px;">Add New Product</div>
+
+  <div class="admin-grid-form" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;">
+    <div class="field">
+      <label>Name</label>
+      <input id="np-name" placeholder="Product name">
+    </div>
+    <div class="field">
+      <label>Product Image</label>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <label class="btn btn-line btn-sm" style="cursor:pointer; margin:0;">
+          Choose Image
+          <input type="file" id="np-image" accept="image/*" style="display:none;" onchange="previewNewImage(this)">
+        </label>
+        <span id="np-image-name" style="font-size:13px; color:#666;">No file chosen</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="field" style="margin-top:12px;">
+    <label>Description</label>
+    <input id="np-desc" placeholder="Short description">
+  </div>
+
+  <div class="tag-checks" style="margin:14px 0; display:flex; gap:18px; flex-wrap:wrap;">
+    <label><input type="checkbox" id="np-bestseller"> Bestseller</label>
+    <label><input type="checkbox" id="np-deal"> Today's Deal</label>
+    <label><input type="checkbox" id="np-new"> New Release</label>
+    <label><input type="checkbox" id="np-sale"> Sale</label>
+  </div>
+
+  <!-- ========== UPDATED Weight Options (multiple rows) ========== -->
+  <div style="margin-top:10px;">
+    <label style="font-weight:600; font-size:13px; display:block; margin-bottom:8px;">Weight Options</label>
+    
+    <table class="variant-table" style="width:100%; border-collapse:collapse;">
+      <thead>
+        <tr style="font-size:12px; color:#666; font-weight:600; text-align:left;">
+          <th style="padding:6px 4px;">Weight</th>
+          <th style="padding:6px 4px;">Price ₹</th>
+          <th style="padding:6px 4px;">MRP ₹</th>
+          <th style="padding:6px 4px;">Stock</th>
+          <th style="padding:6px 4px; width:40px;"></th>
+        </tr>
+      </thead>
+      <tbody id="np-variants-body">
+        <tr>
+          <td style="padding:4px;"><input class="np-weight" value="100g" placeholder="e.g. 100g" style="width:100%;"></td>
+          <td style="padding:4px;"><input class="np-price" type="number" value="199" placeholder="Price" style="width:100%;"></td>
+          <td style="padding:4px;"><input class="np-mrp" type="number" value="249" placeholder="MRP" style="width:100%;"></td>
+          <td style="padding:4px;"><input class="np-stock" type="number" value="50" placeholder="Stock" style="width:100%;"></td>
+          <td style="padding:4px;"><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('tr').remove()">✕</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-line btn-sm" style="margin-top:10px;" onclick="addNewProductWeightRow()">
+      + Add Weight Option
+    </button>
+  </div>
+  <!-- ========== END updated Weight Options ========== -->
+
+  <img id="np-image-preview" style="display:none; margin-top:14px; max-width:110px; border-radius:8px; border:1px solid #e0e0e0;">
+
+  <button class="btn btn-gold btn-sm" style="margin-top:18px;" onclick="addProduct()">+ Add Product</button>
+</div>
+      <div id="adminProductList"></div>
+    </div>
+
+    <!-- Panel: Reviews -->
+    <div class="admin-panel" id="panel-reviews" style="display:none;">
+      <div id="adminReviewList"></div>
+    </div>
+
+    <!-- Panel: Orders -->
+    <div class="admin-panel" id="panel-orders" style="display:none;">
+      <div class="admin-card">
+        <table id="ordersTable" style="width:100%;border-collapse:collapse;">
+  <thead>
+    <tr style="text-align:left;border-bottom:2px solid #ddd;">
+      <th style="padding:8px;">Order</th>
+      <th style="padding:8px;">Customer</th>
+      <th style="padding:8px;">Items</th>
+      <th style="padding:8px;">Address</th>
+      <th style="padding:8px;">Mobile</th>
+      <th style="padding:8px;">Payment</th>
+      <th style="padding:8px;">Total</th>
+      <th style="padding:8px;">Date & Time</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+      </div>
+    </div>
+
+    <!-- Panel: Subscribers -->
+    <div class="admin-panel" id="panel-subs" style="display:none;">
+      <div class="admin-card">
+        <table id="subsTable" style="width:100%;border-collapse:collapse;">
+          <thead>
+            <tr style="text-align:left;border-bottom:2px solid #ddd;">
+              <th style="padding:8px;">Email</th>
+              <th style="padding:8px;">Subscribed</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/jar.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
