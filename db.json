@@ -1,0 +1,394 @@
+{
+  "products": [
+    {
+      "id": "p1",
+      "name": "Carrot Powder",
+      "imageUrl": "imag/Carrot%20Powder.png",
+      "color": "#E67E22",
+      "desc": "Naturally sweet and vibrant carrot powder — perfect for soups, baking and smoothies.",
+      "tags": [
+        "bestseller"
+      ],
+      "rating": 4.6,
+      "ratingCount": 15,
+      "variants": [
+        {
+          "id": "v1",
+          "label": "100g",
+          "price": 149,
+          "mrp": 179,
+          "stock": 36
+        },
+        {
+          "id": "v2",
+          "label": "250g",
+          "price": 329,
+          "mrp": 399,
+          "stock": 30
+        },
+        {
+          "id": "v3",
+          "label": "500g",
+          "price": 599,
+          "mrp": 729,
+          "stock": 18
+        },
+        {
+          "id": "v1790592460954",
+          "label": "50",
+          "price": 99,
+          "mrp": 150,
+          "stock": 48
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "name": "Coriander Powder",
+      "imageUrl": "imag/Coriander%20Powder.png",
+      "color": "#27AE60",
+      "desc": "Freshly ground coriander seeds with rich aroma — ideal for everyday Indian cooking.",
+      "tags": [
+        "bestseller"
+      ],
+      "rating": 4.7,
+      "ratingCount": 22,
+      "variants": [
+        {
+          "id": "v1",
+          "label": "100g",
+          "price": 99,
+          "mrp": 119,
+          "stock": 50
+        },
+        {
+          "id": "v2",
+          "label": "250g",
+          "price": 229,
+          "mrp": 269,
+          "stock": 40
+        },
+        {
+          "id": "v3",
+          "label": "500g",
+          "price": 419,
+          "mrp": 499,
+          "stock": 25
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "name": "Curry Leaves Powder",
+      "imageUrl": "imag/Curry%20Leaves%20Powder.png",
+      "color": "#1E8449",
+      "desc": "Aromatic curry leaves dried and powdered — adds authentic South Indian flavour.",
+      "tags": [
+        "new"
+      ],
+      "rating": 4.5,
+      "ratingCount": 12,
+      "variants": [
+        {
+          "id": "v1",
+          "label": "100g",
+          "price": 159,
+          "mrp": 189,
+          "stock": 34
+        },
+        {
+          "id": "v2",
+          "label": "250g",
+          "price": 349,
+          "mrp": 419,
+          "stock": 20
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "name": "Fenugreek Powder",
+      "imageUrl": "imag/Fenugreek%20Powder.png",
+      "color": "#D4AC0D",
+      "desc": "Bitter-sweet fenugreek powder, traditionally used for health and flavour.",
+      "tags": [
+        "deal"
+      ],
+      "rating": 4.4,
+      "ratingCount": 18,
+      "variants": [
+        {
+          "id": "v1",
+          "label": "100g",
+          "price": 119,
+          "mrp": 149,
+          "stock": 47
+        },
+        {
+          "id": "v2",
+          "label": "250g",
+          "price": 269,
+          "mrp": 329,
+          "stock": 28
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "name": "Garlic Powder",
+      "imageUrl": "imag/Garlic%20Powder.png",
+      "color": "#E7DEC5",
+      "desc": "Pure, pungent garlic powder — hygienically processed to preserve natural aroma and flavour.",
+      "tags": [
+        "bestseller"
+      ],
+      "rating": 4.7,
+      "ratingCount": 22,
+      "variants": [
+        {
+          "id": "v1",
+          "label": "100g",
+          "price": 119,
+          "mrp": 139,
+          "stock": 53
+        },
+        {
+          "id": "v2",
+          "label": "250g",
+          "price": 279,
+          "mrp": 329,
+          "stock": 55
+        },
+        {
+          "id": "v3",
+          "label": "500g",
+          "price": 519,
+          "mrp": 619,
+          "stock": 22
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "name": "Ginger Powder",
+      "imageUrl": "imag/Ginger%20Powder.png",
+      "color": "#C79A56",
+      "desc": "Stone-ground dry ginger with a warm, sharp aroma — ideal for teas, curries and baking.",
+      "tags": [
+        "deal"
+      ],
+      "rating": 4.5,
+      "ratingCount": 14,
+      "variants": [
+        {
+          "id": "v1",
+          "label": "100g",
+          "price": 139,
+          "mrp": 169,
+          "stock": 40
+        },
+        {
+          "id": "v1789572834114",
+          "label": "New size",
+          "price": 0,
+          "mrp": 0,
+          "stock": 0
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "name": "Green Chili Powder",
+      "imageUrl": "imag/Green%20Chili%20Powder.png",
+      "color": "#27AE60",
+      "desc": "Spicy green chili powder made from carefully selected chilies — adds heat and colour.",
+      "tags": [
+        "new"
+      ],
+      "rating": 4.6,
+      "ratingCount": 9,
+      "variants": [
+        {
+          "id": "v1",
+          "label": "100g",
+          "price": 129,
+          "mrp": 159,
+          "stock": 41
+        },
+        {
+          "id": "v2",
+          "label": "250g",
+          "price": 299,
+          "mrp": 359,
+          "stock": 25
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "name": "Marigold Powder",
+      "imageUrl": "imag/Marigold%20Powder.png",
+      "color": "#F39C12",
+      "desc": "Natural marigold flower powder — used for colour and traditional wellness.",
+      "tags": [
+        "new"
+      ],
+      "rating": 4.3,
+      "ratingCount": 7,
+      "variants": [
+        {
+          "id": "v1",
+          "label": "100g",
+          "price": 189,
+          "mrp": 229,
+          "stock": 30
+        },
+        {
+          "id": "v2",
+          "label": "250g",
+          "price": 429,
+          "mrp": 519,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "name": "Moringa Powder",
+      "imageUrl": "imag/Moringa%20Powder.png",
+      "color": "#4C7A3D",
+      "desc": "Shade-dried moringa leaves ground fine — a dense source of everyday nutrition.",
+      "tags": [
+        "bestseller",
+        "deal"
+      ],
+      "rating": 4.7,
+      "ratingCount": 24,
+      "variants": [
+        {
+          "id": "v1",
+          "label": "100g",
+          "price": 159,
+          "mrp": 199,
+          "stock": 15
+        },
+        {
+          "id": "v2",
+          "label": "250g",
+          "price": 349,
+          "mrp": 449,
+          "stock": 8
+        },
+        {
+          "id": "v3",
+          "label": "500g",
+          "price": 649,
+          "mrp": 799,
+          "stock": 13
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "name": "Onion Powder",
+      "imageUrl": "imag/Onion%20Powder.png",
+      "color": "#B08CC0",
+      "desc": "Premium quality dehydrated onion, ground fine for consistent flavour in every batch.",
+      "tags": [
+        "bestseller"
+      ],
+      "rating": 4.8,
+      "ratingCount": 31,
+      "variants": [
+        {
+          "id": "v1",
+          "label": "100g",
+          "price": 109,
+          "mrp": 129,
+          "stock": 70
+        },
+        {
+          "id": "v2",
+          "label": "250g",
+          "price": 249,
+          "mrp": 299,
+          "stock": 80
+        },
+        {
+          "id": "v3",
+          "label": "500g",
+          "price": 459,
+          "mrp": 549,
+          "stock": 35
+        },
+        {
+          "id": "v4",
+          "label": "1kg",
+          "price": 849,
+          "mrp": 999,
+          "stock": 18
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "name": "Rose Petal Powder",
+      "imageUrl": "imag/Rose%20Petal%20Powder.png",
+      "color": "#C0392B",
+      "desc": "Delicate rose petal powder — perfect for sweets, drinks and skincare recipes.",
+      "tags": [
+        "new"
+      ],
+      "rating": 4.6,
+      "ratingCount": 11,
+      "variants": [
+        {
+          "id": "v1",
+          "label": "100g",
+          "price": 249,
+          "mrp": 299,
+          "stock": 25
+        },
+        {
+          "id": "v2",
+          "label": "250g",
+          "price": 549,
+          "mrp": 649,
+          "stock": 12
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "name": "Spinach Powder",
+      "imageUrl": "imag/Spinach%20Powder.png",
+      "color": "#1E8449",
+      "desc": "Nutrient-rich spinach powder — easy way to add greens to your daily meals.",
+      "tags": [
+        "bestseller"
+      ],
+      "rating": 4.5,
+      "ratingCount": 16,
+      "variants": [
+        {
+          "id": "v1",
+          "label": "100g",
+          "price": 139,
+          "mrp": 169,
+          "stock": 36
+        },
+        {
+          "id": "v2",
+          "label": "250g",
+          "price": 319,
+          "mrp": 389,
+          "stock": 22
+        }
+      ]
+    }
+  ],
+  "reviews": [],
+  "users": [],
+  "orders": [],
+  "subscribers": []
+}
